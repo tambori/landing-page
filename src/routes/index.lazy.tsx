@@ -31,10 +31,10 @@ function Index() {
           <br />
           Businesses
         </h1>
-        <h3 className="text-muted-foreground">
+        <h3 className="text-muted-foreground text-lg leading-normal lg:max-w-lg">
           <Balancer>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
+            Tools for the new generation of money with bitcoin at the core.
+            Seamless migration from legacy systems.
           </Balancer>
         </h3>
         <div className="not-prose mt-6 flex gap-2 md:mt-12">
