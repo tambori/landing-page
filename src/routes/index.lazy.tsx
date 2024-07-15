@@ -39,15 +39,15 @@ function Index() {
         </h3>
         <div className="not-prose mt-6 flex gap-2 md:mt-12">
           <Button asChild>
-            <Link href="/">
+            <a href="https://os.tambori.co" target="_self">
               <Rocket className="mr-2 size-4" />
               Get started
-            </Link>
+            </a>
           </Button>
           <Button variant={"ghost"} asChild>
-            <Link href="#" target="_parent">Watch the demo
+            <a href="https://google.com" target="_blank">Watch the demo
               <ArrowRight className="ml-1 size-4" />
-            </Link>
+            </a>
           </Button>
         </div>
       </Container>
