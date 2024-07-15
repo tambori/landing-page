@@ -7,6 +7,7 @@ import { ArrowRight, Rocket, Coins, Waypoints, Webhook } from "lucide-react";
 // Local component imports
 import { Section, Container } from "@/components/craft";
 import { Button } from "@/components/ui/button";
+import WordRotate from '@/components/magicui/word-rotate';
 import Logo from "@/assets/logo-bg.svg";
 
 
@@ -67,15 +68,13 @@ function Index() {
           />
           <h1 className="!mb-0 lg:text-4xl leading-normal md:text-3xl font-bold">
             <Balancer>
-              The Bitcoin OS for African
+              The Bitcoin OS for African<br/> <WordRotate words={["Businesses", "Enterprise", "People"]} />
             </Balancer>
-            <br />
-            Businesses
           </h1>
-          <h3 className="text-muted-foreground text-lg leading-normal lg:max-w-lg">
+          <h3 className="text-muted-foreground mt-2 text-lg leading-normal lg:max-w-lg">
             <Balancer>
-              Tools for the new generation of money with bitcoin at the core.
-              Seamless migration from legacy systems.
+              For the new generation of money.
+              Seamless inter-operability with legacy systems.
             </Balancer>
           </h3>
           <div className="not-prose mt-6 flex gap-2 md:mt-12">
