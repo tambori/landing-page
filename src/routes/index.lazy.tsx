@@ -2,7 +2,7 @@ import { createLazyFileRoute, Link } from '@tanstack/react-router'
 
 // Third-party library imports
 import Balancer from "react-wrap-balancer";
-import { Camera } from "lucide-react";
+import { ArrowRight, Rocket } from "lucide-react";
 
 // Local component imports
 import { Section, Container } from "@/components/craft";
@@ -40,12 +40,14 @@ function Index() {
         <div className="not-prose mt-6 flex gap-2 md:mt-12">
           <Button asChild>
             <Link href="/">
-              <Camera className="mr-2 size-4" />
-              Lorem Ipsum
+              <Rocket className="mr-2 size-4" />
+              Get started
             </Link>
           </Button>
           <Button variant={"ghost"} asChild>
-            <Link href="/posts">Dolor Sit Amet -{">"}</Link>
+            <Link href="#" target="_parent">Watch the demo
+              <ArrowRight className="ml-1 size-4" />
+            </Link>
           </Button>
         </div>
       </Container>
