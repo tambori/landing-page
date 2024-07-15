@@ -2,12 +2,52 @@ import { createLazyFileRoute, Link } from '@tanstack/react-router'
 
 // Third-party library imports
 import Balancer from "react-wrap-balancer";
-import { ArrowRight, Rocket } from "lucide-react";
+import { ArrowRight, Rocket, Coins, Waypoints, Webhook } from "lucide-react";
 
 // Local component imports
 import { Section, Container } from "@/components/craft";
 import { Button } from "@/components/ui/button";
 import Logo from "@/assets/logo-bg.svg";
+
+
+type FeatureText = {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+  href?: string;
+  cta?: string;
+};
+
+const featureText: FeatureText[] = [
+  {
+    icon: <Waypoints className="h-6 w-6" />,
+    title: "Node Autonomy",
+    href: "/",
+    description:
+      "You're not too dumb to manage your personal lightning node, or deploy seperately for your business needs. With easy to reason about tools at your disposal.",
+    cta: "Learn More",
+  },
+  {
+    icon: <Webhook className="h-6 w-6" />,
+    title: "SDK/API Service",
+    href: "/",
+    description:
+      "Start routing payments to and from your users on whatever platform, utilizing your deployed lightning node. Zero worries about in/out bound liquidity setup.",
+    cta: "Learn More",
+  },
+];
+
+const singleFeatureText: FeatureText[] = [
+  {
+    icon: <Coins className="h-6 w-6" />,
+    title: "Notable mentions",
+    href: "/",
+    description:
+      "The following projects are also actively being developed as part of the ecosystem, and therefore any feedback is welcomed.",
+    cta: undefined,
+  },
+];
+
 
 export const Route = createLazyFileRoute('/' as never)({
   component: Index,
@@ -53,6 +93,74 @@ function Index() {
           </div>
         </Container>
       </Section>
+
+
+      <Section>
+        <Container className="not-prose">
+          <div className="flex flex-col gap-6">
+            <h3 className="text-4xl lg:-mb-4 sm:mb-0">
+              <Balancer>
+                Double down on products that<br /> solve problems
+              </Balancer>
+            </h3>
+            <h4 className="text-2xl font-light opacity-70">
+              <Balancer>
+                The products and features we're currently working on
+              </Balancer>
+            </h4>
+
+            <div className="mt-6 grid gap-6 md:mt-12 md:grid-cols-2">
+              {featureText.map(
+                ({ icon, title, description, href, cta }, index) => (
+                  <Link
+                    href={`${href}`}
+                    className="flex flex-col justify-between gap-6 rounded-lg border border-slate-700 dark:border-slate-400 p-6 transition-all hover:-mt-2 hover:mb-2"
+                    key={index}
+                  >
+                    <div className="grid gap-4">
+                      {icon}
+                      <h4 className="text-xl text-primary">{title}</h4>
+                      <p className="text-base opacity-75">{description}</p>
+                    </div>
+                    {cta && (
+                      <div className="flex h-fit items-center text-sm font-semibold">
+                        <p>{cta}</p> <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    )}
+                  </Link>
+                ),
+              )}
+            </div>
+            <div>
+              {singleFeatureText.map(
+                ({ icon, title, description, cta }, index) => (
+                  <div
+                    className="flex flex-col justify-between gap-6 rounded-lg border border-slate-700 dark:border-slate-400  bg-muted/25 p-6 transition-all hover:-mt-2 hover:mb-2"
+                    key={index}
+                  >
+                    <div className="grid gap-4">
+                      {icon}
+                      <h4 className="text-xl text-primary">{title}</h4>
+                      <p className="text-base opacity-75">{description}</p>
+                    </div>
+                    <div className="grid gap-4">
+                      <a href="https://bagggit.tambori.co" target='_blank' className='text-blue-600 font-normal text-sm'>Bagggit</a>
+                      <a href="https://os.tambori.co/demo/bit-wall" target='_blank' className='text-blue-600 font-normal text-sm'>Bit Wall</a>
+                      <a href="https://os.tambori.co/demo/content-kit" target='_blank' className='text-blue-600 font-normal text-sm'>Content Kit</a>
+                    </div>
+                    {cta && (
+                      <div className="flex h-fit items-center text-sm font-semibold">
+                        <p>{cta}</p> <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    )}
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+        </Container>
+      </Section>
+
 
       <footer className="not-prose border-t">
         <Section>
