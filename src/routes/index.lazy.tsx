@@ -7,7 +7,7 @@ import { Camera } from "lucide-react";
 // Local component imports
 import { Section, Container } from "@/components/craft";
 import { Button } from "@/components/ui/button";
-import Logo from "@/assets/react.svg";
+import Logo from "@/assets/logo-bg.svg";
 
 export const Route = createLazyFileRoute('/' as never)({
   component: Index,
@@ -26,8 +26,10 @@ function Index() {
         />
         <h1 className="!mb-0 lg:text-4xl md:text-3xl font-bold">
           <Balancer>
-            The Bitcoin OS for Africans
+            The Bitcoin OS for African
           </Balancer>
+          <br />
+          Businesses
         </h1>
         <h3 className="text-muted-foreground">
           <Balancer>
