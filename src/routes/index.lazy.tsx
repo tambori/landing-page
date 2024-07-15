@@ -24,7 +24,7 @@ function Index() {
           alt="Company Logo"
           className="not-prose mb-6 dark:invert md:mb-8"
         />
-        <h1 className="!mb-0 lg:text-4xl md:text-3xl font-bold">
+        <h1 className="!mb-0 lg:text-4xl leading-normal md:text-3xl font-bold">
           <Balancer>
             The Bitcoin OS for African
           </Balancer>
