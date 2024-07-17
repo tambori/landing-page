@@ -111,6 +111,7 @@ function Index() {
     <>
       <Section>
         <Container className="flex flex-col items-center text-center">
+          {/* TODO: add easter egg SATS giveaway */}
           <div className='relative h-[172px] w-[172px] md:mb-8 mb-6 hover:scale-95 hover:cursor-pointer transition-all' onClick={() => transition(theme === 'light' ? 'dark' : 'light')}>
             <AnimatePresence initial={false} custom={theme}>
               {theme === "light" && <TestImageComp key={"0"} src={Logo} />}
