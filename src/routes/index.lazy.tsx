@@ -11,18 +11,16 @@ import WordRotate from '@/components/magicui/word-rotate';
 import Logo from "@/assets/logo-bg.svg";
 import LogoDark from "@/assets/logo-gradient.svg";
 
-
 // animation entry
 import { motion, AnimatePresence } from 'framer-motion';
 import React from 'react';
 
 const MotionBox = motion.div;
- // ForwardRefComponent<HTMLElement, HTMLMotionProps<'div'>>
 const variants = {
   enter: () => {
     return {
-      y: 10,
-      opacity: 0
+      y: 5,
+      opacity: 0,
     };
   },
   center: {
@@ -33,21 +31,27 @@ const variants = {
   exit: () => {
     return {
       xIndex: 0,
-      y: 10,
-      opacity: 0
+      y: 5,
+      opacity: 0,
     }
   }
 };
 
-
 const TestImageComp = ({ src }: { src: string }) => (
-  <MotionBox variants={variants} initial="enter" animate="center" exit="exit" className='rounded-lg h-62 w-62 absolute'>
+  <MotionBox
+    variants={variants}
+    initial="enter"
+    animate="center"
+    exit="exit"
+    // whileHover={{ scale: 0.97, cursor: "pointer" }}
+    className='rounded-lg h-62 w-62 absolute'
+  >
     <img
       src={src}
       width={"100%"}
       height={"100%"}
       alt="Company Logo"
-      className="not-prose dark:invert "
+      className="not-prose dark:invert"
     />
   </MotionBox>
 )
@@ -102,22 +106,20 @@ function Index() {
   const transition = (newTheme: 'light' | 'dark') => {
     setTheme(newTheme);
   }
-  
+
   return (
     <>
       <Section>
         <Container className="flex flex-col items-center text-center">
-          <div className='relative h-[172px] w-[172px] md:mb-8 mb-6'>
+          <div className='relative h-[172px] w-[172px] md:mb-8 mb-6 hover:scale-95 hover:cursor-pointer transition-all' onClick={() => transition(theme === 'light' ? 'dark' : 'light')}>
             <AnimatePresence initial={false} custom={theme}>
-
               {theme === "light" && <TestImageComp key={"0"} src={Logo} />}
               {theme === 'dark' && <TestImageComp key={"1"} src={LogoDark} />}
-              
-            </AnimatePresence>  
+            </AnimatePresence>
           </div>
           <h1 className="!mb-0 lg:text-4xl leading-normal md:text-3xl font-bold">
             <Balancer>
-              The Bitcoin OS for African<br /> <WordRotate words={["Businesses", "Enterprise", "People"]} />
+              The Bitcoin OS for African<br /> <WordRotate className='!mb-0 lg:text-4xl leading-normal md:text-3xl font-bold' words={["Businesses", "Enterprise", "People"]} />
             </Balancer>
           </h1>
           <h3 className="text-muted-foreground mt-2 text-lg leading-normal lg:max-w-lg">
@@ -127,10 +129,7 @@ function Index() {
             </Balancer>
           </h3>
           <div className="not-prose mt-6 flex gap-2 md:mt-12">
-            <Button asChild onClick={(e) => {
-              e.preventDefault();
-              transition(theme === 'light'? 'dark' : 'light');
-            }}>
+            <Button asChild>
               <a href="https://os.tambori.co" target="_self">
                 <Rocket className="mr-2 size-4" />
                 Get started
