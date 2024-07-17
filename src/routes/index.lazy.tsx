@@ -8,12 +8,11 @@ import { ArrowRight, Rocket, Coins, Waypoints, Webhook } from "lucide-react";
 import { Section, Container } from "@/components/craft";
 import { Button } from "@/components/ui/button";
 import WordRotate from '@/components/magicui/word-rotate';
-import Logo from "@/assets/logo-bg.svg";
-import LogoDark from "@/assets/logo-gradient.svg";
+import LogoDark from "@/assets/logo-bg.svg";
+import LogoLight from "@/assets/logo-gradient.svg";
 
 // animation entry
 import { motion, AnimatePresence } from 'framer-motion';
-import React from 'react';
 import { useTheme } from '@/components/theme-provider';
 
 const MotionBox = motion.div;
@@ -52,7 +51,7 @@ const TestImageComp = ({ src }: { src: string }) => (
       width={"100%"}
       height={"100%"}
       alt="Company Logo"
-      className="not-prose dark:invert"
+      className="not-prose"
     />
   </MotionBox>
 )
@@ -115,7 +114,7 @@ function Index() {
           {/* TODO: add easter egg SATS giveaway */}
           <div className='relative h-[172px] w-[172px] md:mb-8 mb-6 hover:scale-95 hover:cursor-pointer transition-all' onClick={() => transition(theme === 'light' ? 'dark' : 'light')}>
             <AnimatePresence initial={false} custom={theme}>
-              {theme === "light" && <TestImageComp key={"0"} src={Logo} />}
+              {theme === "light" && <TestImageComp key={"0"} src={LogoLight} />}
               {theme === 'dark' && <TestImageComp key={"1"} src={LogoDark} />}
             </AnimatePresence>
           </div>

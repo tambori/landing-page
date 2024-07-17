@@ -16,7 +16,7 @@ const TanStackRouterDevtools =
 export const Route = createRootRoute({
   component: () => (
     <ThemeProvider defaultTheme='dark' storageKey='tambori-ui-theme'>
-      <Layout className='lg:px-8 sm:px-6 dark:bg-slate-800 bg-slate-100 min-h-screen'>
+      <Layout className='lg:px-8 sm:px-6 min-h-screen'>
         {/*      <div className="p-2 flex gap-2">
         <Link to="/" className="[&.active]:font-bold">
           Home
