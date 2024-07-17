@@ -1,4 +1,5 @@
 import { Layout } from '@/components/craft';
+import { ThemeProvider } from '@/components/theme-provider';
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import React from 'react';
 const TanStackRouterDevtools =
@@ -14,8 +15,9 @@ const TanStackRouterDevtools =
 
 export const Route = createRootRoute({
   component: () => (
-    <Layout className='lg:px-8 sm:px-6 dark:bg-slate-800 bg-slate-100 min-h-screen'>
-      {/*      <div className="p-2 flex gap-2">
+    <ThemeProvider defaultTheme='dark' storageKey='tambori-ui-theme'>
+      <Layout className='lg:px-8 sm:px-6 dark:bg-slate-800 bg-slate-100 min-h-screen'>
+        {/*      <div className="p-2 flex gap-2">
         <Link to="/" className="[&.active]:font-bold">
           Home
         </Link>{' '}
@@ -25,8 +27,9 @@ export const Route = createRootRoute({
       </div>
       <hr />
     */}
-      <Outlet />
-      <TanStackRouterDevtools />
-    </Layout>
+        <Outlet />
+        <TanStackRouterDevtools />
+      </Layout>
+    </ThemeProvider>
   ),
 });

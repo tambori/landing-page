@@ -14,6 +14,7 @@ import LogoDark from "@/assets/logo-gradient.svg";
 // animation entry
 import { motion, AnimatePresence } from 'framer-motion';
 import React from 'react';
+import { useTheme } from '@/components/theme-provider';
 
 const MotionBox = motion.div;
 const variants = {
@@ -101,7 +102,7 @@ export const Route = createLazyFileRoute('/' as never)({
 })
 
 function Index() {
-  const [theme, setTheme] = React.useState<'light' | 'dark'>('light');
+  const {setTheme, theme} = useTheme();
 
   const transition = (newTheme: 'light' | 'dark') => {
     setTheme(newTheme);
