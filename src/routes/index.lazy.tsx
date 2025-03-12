@@ -120,7 +120,7 @@ function Index() {
           </div>
           <h1 className="!mb-0 lg:text-4xl leading-normal md:text-3xl font-bold">
             <Balancer>
-              The Bitcoin OS for African<br /> <WordRotate className='!mb-0 lg:text-4xl leading-normal md:text-3xl font-bold' words={["Businesses", "Enterprise", "People"]} />
+              The Bitcoin OS for<br /> <WordRotate className='!mb-0 lg:text-4xl leading-normal md:text-3xl font-bold' words={["Businesses", "Enterprise", "People"]} />
             </Balancer>
           </h1>
           <h3 className="text-muted-foreground mt-2 text-lg leading-normal lg:max-w-lg">
@@ -231,8 +231,7 @@ function Index() {
               <div className='grid gap-4'>
                 <p>
                   <Balancer>
-                    tambori is a project commited to the development of technology, that will aid
-                    the seamless adoption of bitcoin on the African continent.
+                    Built for seamless adoption of bitcoin in Africa with 🧡.
                   </Balancer>
                 </p>
                 <div className="mb-6 flex flex-col gap-4 text-sm text-muted-foreground underline underline-offset-4 md:mb-0 md:flex-row">
